@@ -171,6 +171,9 @@
     <h2>🔐 Real-Time Phishing URL Scanner</h2>
     <input type="text" id="urlInput" placeholder="Paste a URL to scan (e.g. https://suspicious-site.com)" />
     <button onclick="checkURL()">🔎 Check Now</button>
+    <div style="margin-top: 15px;">
+      <a href="/admin" style="color: #007bff; text-decoration: none; font-weight: 600;">🛡️ Admin Panel</a>
+    </div>
 
     <div id="loading" style="margin-top: 15px; display: none;">⏳ Scanning...</div>
     <div id="resultBox" class="result"></div>
@@ -216,7 +219,9 @@
         resultBox.innerHTML = `
           <strong>${icon} ${data.mlResult.toUpperCase()}</strong><br><br>
           <strong>URL:</strong> <a href="${data.url}" target="_blank" rel="noopener noreferrer">${data.url}</a><br>
-          <strong>Country:</strong> ${data.country || "Unknown"}
+          <strong>IP Address:</strong> ${data.url_ip || "Unknown"}<br>
+          <strong>Country:</strong> ${data.country || "Unknown"}<br>
+          ${data.blocked ? '<br><strong>🛡️ IP Address has been automatically blocked!</strong>' : ''}
         `;
 
         geoFlag.textContent = data.geoFlagged
