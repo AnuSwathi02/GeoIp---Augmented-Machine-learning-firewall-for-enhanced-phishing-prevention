@@ -25,34 +25,9 @@ A comprehensive cybersecurity solution that combines machine learning, GeoIP ana
 - **Enhanced ML Model**: 11-feature URL analysis with 100% training accuracy
 
 ## 🏗️ Architecture
+<img width="752" height="898" alt="image" src="https://github.com/user-attachments/assets/1959acc5-771b-48e9-9fc7-a57b46064856" />
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Web Interface │    │  Streamlit UI   │    │ Monitoring Dash │
-│    (Flask)      │    │                 │    │                 │
-└─────────┬───────┘    └─────────┬───────┘    └─────────┬───────┘
-          │                      │                      │
-          └──────────────────────┼──────────────────────┘
-                                 │
-                    ┌─────────────▼─────────────┐
-                    │      Flask API Server     │
-                    │    (Port 5000)           │
-                    └─────────────┬─────────────┘
-                                  │
-          ┌───────────────────────┼───────────────────────┐
-          │                       │                       │
-┌─────────▼───────┐    ┌─────────▼───────┐    ┌─────────▼───────┐
-│  ML Classifier  │    │   GeoIP Engine  │    │  UFW Firewall   │
-│ (11 Features)   │    │  (Country Risk) │    │   (Auto Block)  │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-          │                       │                       │
-          └───────────────────────┼───────────────────────┘
-                                  │
-                    ┌─────────────▼─────────────┐
-                    │    SQLite Database       │
-                    │  (Blocked IPs & Logs)   │
-                    └───────────────────────────┘
-```
+
 
 ## 🛠️ Installation
 
